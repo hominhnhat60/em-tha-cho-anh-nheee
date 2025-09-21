@@ -2,30 +2,29 @@
 <html lang="vi">
 <head>
   <meta charset="UTF-8">
-  <title>Xin lỗi em mòoo ❤️</title>
+  <title>Xin lỗi em ❤️</title>
   <style>
     body {
       margin: 0;
       padding: 0;
-      background: url("images/yeuem.jpg") no-repeat center center fixed;
-      background-size: cover;
+      background: #ffe6e6; /* hoặc ảnh background nếu muốn */
       text-align: center;
       font-family: 'Arial', sans-serif;
-      color: #fff; /* chữ trắng để nổi trên ảnh */
+      color: #333;
     }
     .container {
       position: relative;
       top: 50%;
       transform: translateY(-50%);
     }
-    .small-img {
-      width: 150px;
-      margin-bottom: 20px;
+    img {
+      width: 200px;
       border-radius: 50%;
+      margin-bottom: 20px;
     }
     h1 {
       font-size: 40px;
-      color: #ffdddd;
+      color: #e60000;
       margin-bottom: 20px;
     }
     p {
@@ -58,9 +57,9 @@
 </head>
 <body>
   <div class="container">
-    <img src="images/yeuem_small.png" alt="Yêu em" class="small-img">
+    <!-- nếu bạn có ảnh thì dùng <img src="link-ảnh" alt="ảnh"> -->
     <h1>Bé iuu ơi, anh xin lỗi nhé 😔</h1>
-    <p>Nếu em đồng ý, nhấn “Tạm tha”. Nếu không, “có cc”.</p>
+    <p>Nếu em đồng ý, nhấn “Tạm”. Nếu không, “Có cc”.</p>
     <div class="btns">
       <button class="btn btn-yes" onclick="yesClicked()">Em chấp nhận</button>
       <button class="btn btn-no" id="noBtn">Không bao giờ</button>
@@ -71,6 +70,7 @@
     const noBtn = document.getElementById('noBtn');
 
     noBtn.addEventListener('mouseover', function() {
+      // Khi di chuột lên, nút "Không" sẽ di chuyển ngẫu nhiên
       const x = Math.random() * (window.innerWidth - noBtn.clientWidth);
       const y = Math.random() * (window.innerHeight - noBtn.clientHeight);
       noBtn.style.position = 'absolute';
@@ -79,8 +79,9 @@
     });
 
     function yesClicked() {
-      alert('Trang yêu em là của anh rồi 💖');
-      document.body.innerHTML = '<h1>Yêu bé Thục Min nhìu lắm hog yêu nhiều em đouuu :33 </h1>';
+      alert('Cảm ơn em rất nhiều! 💖');
+      // bạn có thể redirect, thay đổi nội dung trang...
+      document.body.innerHTML = '<h1>Yêu bé Thục Min nhìu lắm hog yêu nhiều em đouuu :333 </h1>';
     }
   </script>
 </body>
