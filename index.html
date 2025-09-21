@@ -2,15 +2,17 @@
 <html lang="vi">
 <head>
   <meta charset="UTF-8">
-  <title>Xin lỗi mòooo ❤️</title>
+  <title>Xin lỗi em ❤️</title>
   <style>
     body {
       margin: 0;
       padding: 0;
-      background: #ffe6e6; /* hoặc ảnh background nếu muốn */
+      background: #ffe6e6;
       text-align: center;
       font-family: 'Arial', sans-serif;
       color: #333;
+      height: 100vh;
+      overflow: hidden; /* tránh kéo trang khi nút nhảy */
     }
     .container {
       position: relative;
@@ -35,6 +37,7 @@
       display: flex;
       justify-content: center;
       gap: 30px;
+      position: relative;
     }
     .btn {
       padding: 15px 30px;
@@ -51,16 +54,12 @@
     .btn-no {
       background: #999;
       color: white;
-      position: relative;
+      position: absolute; /* để dễ di chuyển */
     }
   </style>
 </head>
 <body>
   <div class="container">
-    <img src="https://jbagy.me/wp-content/uploads/2025/04/Hinh-anh-meme-meo-xin-loi-dang-yeu-1.jpg" 
-     alt="Hình meme mèo xin lỗi đáng yêu" 
-     width="300px">
-    <!-- nếu bạn có ảnh thì dùng <img src="link-ảnh" alt="ảnh"> -->
     <h1>Bé iuu ơi, anh xin lỗi nhé 😔</h1>
     <p>Nếu em đồng ý, nhấn “Em chấp nhận”. Nếu không, “Không bao giờ”.</p>
     <div class="btns">
@@ -73,18 +72,19 @@
     const noBtn = document.getElementById('noBtn');
 
     noBtn.addEventListener('mouseover', function() {
-      // Khi di chuột lên, nút "Không" sẽ di chuyển ngẫu nhiên
-      const x = Math.random() * (window.innerWidth - noBtn.clientWidth);
-      const y = Math.random() * (window.innerHeight - noBtn.clientHeight);
-      noBtn.style.position = 'absolute';
+      const maxX = window.innerWidth - noBtn.offsetWidth - 20; 
+      const maxY = window.innerHeight - noBtn.offsetHeight - 20; 
+
+      const x = Math.random() * maxX;
+      const y = Math.random() * maxY;
+
       noBtn.style.left = x + 'px';
       noBtn.style.top = y + 'px';
     });
 
     function yesClicked() {
       alert('Cảm ơn em rất nhiều! 💖');
-      // bạn có thể redirect, thay đổi nội dung trang...
-      document.body.innerHTML = '<h1>Yêu emmmmmmmmm!</h1>';
+      document.body.innerHTML = '<h1>Yêu bé Thục Min nhìu lắm hog yêu nhiều em đouuu!</h1>';
     }
   </script>
 </body>
