@@ -2,31 +2,30 @@
 <html lang="vi">
 <head>
   <meta charset="UTF-8">
-  <title>Xin lỗi em ❤️</title>
+  <title>Xin lỗi em mòoo ❤️</title>
   <style>
     body {
       margin: 0;
       padding: 0;
-      background: #ffe6e6;
+      background: url("images/yeuem.jpg") no-repeat center center fixed;
+      background-size: cover;
       text-align: center;
       font-family: 'Arial', sans-serif;
-      color: #333;
-      height: 100vh;
-      overflow: hidden; /* tránh kéo trang khi nút nhảy */
+      color: #fff; /* chữ trắng để nổi trên ảnh */
     }
     .container {
       position: relative;
       top: 50%;
       transform: translateY(-50%);
     }
-    img {
-      width: 200px;
-      border-radius: 50%;
+    .small-img {
+      width: 150px;
       margin-bottom: 20px;
+      border-radius: 50%;
     }
     h1 {
       font-size: 40px;
-      color: #e60000;
+      color: #ffdddd;
       margin-bottom: 20px;
     }
     p {
@@ -37,7 +36,6 @@
       display: flex;
       justify-content: center;
       gap: 30px;
-      position: relative;
     }
     .btn {
       padding: 15px 30px;
@@ -54,14 +52,15 @@
     .btn-no {
       background: #999;
       color: white;
-      position: absolute; /* để dễ di chuyển */
+      position: relative;
     }
   </style>
 </head>
 <body>
   <div class="container">
+    <img src="images/yeuem_small.png" alt="Yêu em" class="small-img">
     <h1>Bé iuu ơi, anh xin lỗi nhé 😔</h1>
-    <p>Nếu em đồng ý, nhấn “Em chấp nhận”. Nếu không, “Không bao giờ”.</p>
+    <p>Nếu em đồng ý, nhấn “Tạm tha”. Nếu không, “có cc”.</p>
     <div class="btns">
       <button class="btn btn-yes" onclick="yesClicked()">Em chấp nhận</button>
       <button class="btn btn-no" id="noBtn">Không bao giờ</button>
@@ -72,19 +71,16 @@
     const noBtn = document.getElementById('noBtn');
 
     noBtn.addEventListener('mouseover', function() {
-      const maxX = window.innerWidth - noBtn.offsetWidth - 20; 
-      const maxY = window.innerHeight - noBtn.offsetHeight - 20; 
-
-      const x = Math.random() * maxX;
-      const y = Math.random() * maxY;
-
+      const x = Math.random() * (window.innerWidth - noBtn.clientWidth);
+      const y = Math.random() * (window.innerHeight - noBtn.clientHeight);
+      noBtn.style.position = 'absolute';
       noBtn.style.left = x + 'px';
       noBtn.style.top = y + 'px';
     });
 
     function yesClicked() {
-      alert('Cảm ơn em rất nhiều! 💖');
-      document.body.innerHTML = '<h1>Yêu bé Thục Min nhìu lắm hog yêu nhiều em đouuu!</h1>';
+      alert('Trang yêu em là của anh rồi 💖');
+      document.body.innerHTML = '<h1>Yêu bé Thục Min nhìu lắm hog yêu nhiều em đouuu :33 </h1>';
     }
   </script>
 </body>
