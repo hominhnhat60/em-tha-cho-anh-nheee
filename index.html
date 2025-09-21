@@ -5,29 +5,84 @@
   <title>Xin lỗi em ❤️</title>
   <style>
     body {
-      background: linear-gradient(to right, pink, lightyellow);
+      margin: 0;
+      padding: 0;
+      background: #ffe6e6; /* hoặc ảnh background nếu muốn */
       text-align: center;
-      font-family: Arial, sans-serif;
-      padding: 50px;
+      font-family: 'Arial', sans-serif;
+      color: #333;
     }
-    h1 { color: red; font-size: 50px; }
-    p { font-size: 22px; }
-    button {
-      padding: 15px 25px;
-      font-size: 18px;
+    .container {
+      position: relative;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+    img {
+      width: 200px;
+      border-radius: 50%;
+      margin-bottom: 20px;
+    }
+    h1 {
+      font-size: 40px;
+      color: #e60000;
+      margin-bottom: 20px;
+    }
+    p {
+      font-size: 24px;
+      margin-bottom: 30px;
+    }
+    .btns {
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+    }
+    .btn {
+      padding: 15px 30px;
+      font-size: 20px;
       border: none;
-      border-radius: 12px;
-      background: red;
-      color: white;
+      border-radius: 10px;
       cursor: pointer;
-      margin-top: 20px;
+      transition: all 0.3s ease;
     }
-    button:hover { background: darkred; }
+    .btn-yes {
+      background: #ff6666;
+      color: white;
+    }
+    .btn-no {
+      background: #999;
+      color: white;
+      position: relative;
+    }
   </style>
 </head>
 <body>
-  <h1>Xin lỗi em ❤️</h1>
-  <p>Anh biết anh sai rồi... em tha lỗi cho anh nha 🥺</p>
-  <button onclick="alert('Em đã tha thứ cho anh rồi 💖')">Tha lỗi cho anh</button>
+  <div class="container">
+    <!-- nếu bạn có ảnh thì dùng <img src="link-ảnh" alt="ảnh"> -->
+    <h1>Bé iuu ơi, anh xin lỗi nhé 😔</h1>
+    <p>Nếu em đồng ý, nhấn “Em chấp nhận”. Nếu không, “Không bao giờ”.</p>
+    <div class="btns">
+      <button class="btn btn-yes" onclick="yesClicked()">Em chấp nhận</button>
+      <button class="btn btn-no" id="noBtn">Không bao giờ</button>
+    </div>
+  </div>
+
+  <script>
+    const noBtn = document.getElementById('noBtn');
+
+    noBtn.addEventListener('mouseover', function() {
+      // Khi di chuột lên, nút "Không" sẽ di chuyển ngẫu nhiên
+      const x = Math.random() * (window.innerWidth - noBtn.clientWidth);
+      const y = Math.random() * (window.innerHeight - noBtn.clientHeight);
+      noBtn.style.position = 'absolute';
+      noBtn.style.left = x + 'px';
+      noBtn.style.top = y + 'px';
+    });
+
+    function yesClicked() {
+      alert('Cảm ơn em rất nhiều! 💖');
+      // bạn có thể redirect, thay đổi nội dung trang...
+      document.body.innerHTML = '<h1>Em đã đồng ý rồi ❤️ Anh hạnh phúc lắm!</h1>';
+    }
+  </script>
 </body>
 </html>
